@@ -1,0 +1,9 @@
+<button #btn (click)="overlay.toggle()">--Select--</button>
+<v-overlay [target]="btn" #overlay>
+    <ul>
+        @let labelKey = optionLabelKey();
+        @for (item of finalOptions(); track $index) {
+            <li>{{ item[labelKey] }}</li>
+        }
+    </ul>
+</v-overlay>

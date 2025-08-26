@@ -1,0 +1,37 @@
+:host {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+
+    .overlay-container {
+        display: inline-block;
+        position: absolute;
+        display: inline-block;
+        position: absolute;
+        background: white;
+        box-shadow: 0 0 2px #00000094;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .overlay-fade-in {
+        @starting-style {
+            margin-top: -15px;
+            opacity: 0;
+        }
+
+        transition: margin-top 225ms ease-out,
+        opacity 225ms ease-out;
+        margin-top: 0px;
+        opacity: 1;
+    }
+
+    .overlay-fade-out {
+        transition: margin-top 195ms ease-in, opacity 195ms ease-in;
+        margin-top: -15px;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,18 @@
+@if(visible()){
+    <div class="overlay-container"
+    [ngStyle]="containerStyle()"
+    #container
+    [style.padding]="padding()"
+    animate.enter="overlay-fade-in"
+    animate.leave="overlay-fade-out"
+    style="pointer-events: auto;"
+    (keydown.escape)="onEscapeKey($event)">
+        <ng-content></ng-content>
+        @if(showArrow()){
+            <svg width="12" viewBox="0 0 10 10" [ngStyle]="arrowStyle()">
+                <polygon points="0,10 10,10 5,10" fill="#c7c7c7" />
+                <polygon points="1,10 9,10 5,2" fill="#c7c7c7" />
+            </svg>
+        }
+    </div>
+}
